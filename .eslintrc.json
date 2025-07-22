@@ -1,0 +1,102 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:tailwindcss/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "react-hooks",
+    "import",
+    "jsx-a11y",
+    "tailwindcss",
+    "prettier"
+  ],
+  "rules": {
+    "react/prop-types": "off",
+    "react/react-in-jsx-scope": "off",
+    "tailwindcss/classnames-order": "warn",
+    "tailwindcss/enforces-shorthand": "warn",
+    "tailwindcss/migration-from-tailwind-2": "warn",
+    "tailwindcss/no-arbitrary-value": "off",
+    "tailwindcss/no-custom-classname": "off",
+    "tailwindcss/no-contradicting-classname": "error",
+    "react-hooks/exhaustive-deps": "off",
+    "no-unused-vars": ["error", { "args": "none", "ignoreRestSiblings": true }],
+    "jsx-a11y/no-static-element-interactions": "off", //to be removed
+    "jsx-a11y/click-events-have-key-events": "off", //to be removed
+    "jsx-a11y/no-noninteractive-element-interactions": "off", //to be removed
+    "jsx-a11y/label-has-associated-control": "off", //to be removed
+    "import/no-unresolved": [
+      "error",
+      {
+        "ignore": [
+          "^pages/",
+          "^components/",
+          "^hooks/",
+          "^layout/",
+          "^libs/",
+          "^media/",
+          "^routes/",
+          "^store/",
+          "^styles/",
+          "^data/"
+        ]
+      }
+    ],
+
+    "no-use-before-define": [
+      "error",
+      { "functions": false, "classes": true, "variables": false }
+    ],
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "endOfLine": "auto"
+      }
+    ]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      },
+      "alias": {
+        "map": [
+          ["pages", "./src/pages"],
+          ["components", "./src/components"],
+          ["hooks", "./src/hooks"],
+          ["layout", "./src/layout"],
+          ["libs", "./src/libs"],
+          ["media", "./src/media"],
+          ["routes", "./src/routes"],
+          ["store", "./src/store"],
+          ["data", "./src/data"],
+          ["styles", "./src/styles"]
+        ],
+        "extensions": [".js", ".jsx", ".json"]
+      }
+    }
+  }
+}

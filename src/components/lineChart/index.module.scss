@@ -1,0 +1,8 @@
+.chartWrapper {
+  height: 100%;
+  :global {
+    .echarts-for-react svg {
+      top: 30px !important;
+    }
+  }
+}

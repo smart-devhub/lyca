@@ -1,0 +1,87 @@
+@import 'src/styles/base/base';
+
+.wrap {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  .timeline {
+    padding: 0px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    margin: 0px auto 0px auto;
+    li {
+      list-style: none;
+      float: left;
+      width: 33.33%;
+      color: $secondary-color-3;
+      text-align: center;
+      position: relative;
+      &:first-child {
+        &::after {
+          content: none;
+        }
+      }
+      &::before {
+        content: '';
+        width: 30px;
+        height: 30px;
+        color: $dark;
+        display: block;
+        cursor: pointer;
+        line-height: 50px;
+        border-radius: 50%;
+        text-align: center;
+        margin: 0 auto 10px auto;
+        outline: solid #fff0 2px;
+        background: $secondary-color-3;
+        transition: all ease-in-out 0.3s;
+      }
+      &::after {
+        content: '';
+        top: 16px;
+        left: -50%;
+        height: 1px;
+        width: 100%;
+        z-index: 0;
+        position: absolute;
+        transition: all ease-in-out 0.3s;
+        background-color: $secondary-color-3;
+      }
+      span {
+        display: block;
+        max-width: 76px;
+        text-transform: capitalize;
+        margin: 0 auto;
+      }
+    }
+    .completed {
+      &::before {
+        color: $white;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: $orange-dull;
+      }
+    }
+    .progress {
+      color: $orange-dull;
+      &:first-child {
+        &::before {
+          border: 5px solid $white;
+          background: $secondary-color-3;
+          outline: solid $orange-dull 2px;
+        }
+      }
+      &::before {
+        border: 5px solid $white;
+        background: $orange-dull;
+        outline: solid $orange-dull 2px;
+      }
+      &::after {
+        background: $orange-dull;
+      }
+    }
+  }
+}

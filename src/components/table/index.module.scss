@@ -1,0 +1,38 @@
+.tableWrapper {
+  &::-webkit-scrollbar {
+    width: 4px;
+    height: 4px; /* for horizontal scrollbar */
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #bbbaba;
+  }
+  table {
+    tr {
+      th {
+        background-color: var(--orange);
+        color: white;
+        font-size: 14px;
+        font-weight: 800;
+        text-align: left;
+        &:first-child {
+          border-top-left-radius: 5px;
+        }
+        &:last-child {
+          border-top-right-radius: 5px;
+        }
+      }
+      td {
+        &:last-child {
+          text-align: left !important;
+        }
+      }
+      .delete-icon {
+        svg {
+          width: 10px;
+          height: 10px;
+        }
+      }
+    }
+  }
+}

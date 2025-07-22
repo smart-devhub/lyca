@@ -1,0 +1,7 @@
+node_modules/
+build/
+dist/
+
+# Ignore test folders
+__tests__/
+src/**/*.test.js
