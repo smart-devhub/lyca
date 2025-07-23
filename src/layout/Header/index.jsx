@@ -17,7 +17,9 @@ const Header = () => {
   };
 
   return (
-    <div className={`mx-4 my-5 rounded-[20px] bg-primary`}>
+    <div
+      className={`rounded-0 m-0 bg-primary lg:mx-4 lg:my-5 lg:rounded-[20px]`}
+    >
       <TopSection handleClickLink={handleClickLink} />
       <BottomSection />
     </div>

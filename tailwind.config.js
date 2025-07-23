@@ -5,10 +5,16 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        blue: {
+          200: '#B2D2F6',
+        },
+
         primary: '#21254F',
         light_primary: '#424669',
         secondary: '#9092A7',
         light_secondary: '#BCBECA',
+        stone: '#FFF7F2',
+        coral: '#FFE3D9',
       },
 
       transitionProperty: {
@@ -48,8 +54,6 @@ module.exports = {
 
         '.row': {
           display: 'flex',
-          flexWrap: 'wrap',
-          margin: '0px -8px',
         },
       });
     },

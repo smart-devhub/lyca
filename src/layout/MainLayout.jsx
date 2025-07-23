@@ -5,11 +5,13 @@ import Header from './Header';
 
 //@import routes
 import Footer from './Footer';
+import SidebarMenu from './SidebarMenu';
 
 const Layout = ({ handleLogout, children }) => {
   return (
     <div className='w-full bg-black'>
       <Header handleLogout={handleLogout} />
+      <SidebarMenu />
       <main className={`m-5 rounded-[20px] bg-white px-[120px] py-[60px]`}>
         <div className='container'>
           <div className='row'>

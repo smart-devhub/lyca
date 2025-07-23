@@ -14,8 +14,36 @@ export const SidebarRoutes = [
   {
     path: '',
     icon: <SVG icon={templatesIcon} className='' />,
-    name: 'Plans',
+    name: 'Plan',
   },
-
-  //<---------------Manage-Masking SubCategory--------------->
+  {
+    path: '',
+    icon: <SVG icon={templatesIcon} className='' />,
+    name: 'Family Plan',
+  },
+  {
+    path: '',
+    icon: <SVG icon={templatesIcon} className='' />,
+    name: 'Top up',
+  },
+  {
+    path: '',
+    icon: <SVG icon={templatesIcon} className='' />,
+    name: 'Payments',
+  },
+  {
+    path: '',
+    icon: <SVG icon={templatesIcon} className='' />,
+    name: 'Usage and history',
+  },
+  {
+    path: '',
+    icon: <SVG icon={templatesIcon} className='' />,
+    name: 'Account Management ',
+  },
+  {
+    path: '',
+    icon: <SVG icon={templatesIcon} className='' />,
+    name: 'Help and Support ',
+  },
 ];
