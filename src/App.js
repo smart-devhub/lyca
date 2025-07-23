@@ -1,13 +1,16 @@
 import { Routes, Route } from 'react-router-dom';
 // @import components
 import MainLayout from 'layout/MainLayout';
+import AuthLayout from 'layout/AuthLayout';
 // @import dependencies
 import { Helmet } from 'react-helmet';
+import { AppRoutes } from 'routes/AppRoutes';
+import { Suspense } from 'react';
+import Loader from 'components/loader';
 
 function App() {
-  const handleLogout = () => {
-    console.log('logout');
-  };
+  const authRoutes = AppRoutes?.filter(r => r.layout === 'auth');
+  const mainRoutes = AppRoutes?.filter(r => r.layout === 'main');
 
   return (
     <>
@@ -17,7 +20,35 @@ function App() {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
       </Helmet>
       <Routes>
-        <Route path='/*' element={<MainLayout handleLogout={handleLogout} />} />
+        {mainRoutes?.map((route, i) => (
+          <Route
+            key={i}
+            path={route.path}
+            element={
+              <MainLayout>
+                <Suspense fallback={<Loader />}>
+                  <route.component />
+                </Suspense>
+              </MainLayout>
+            }
+          />
+        ))}
+
+        {authRoutes?.map((route, i) => (
+          <Route
+            key={i}
+            path={route.path}
+            element={
+              <AuthLayout>
+                <Suspense fallback={<Loader />}>
+                  <route.component />
+                </Suspense>
+              </AuthLayout>
+            }
+          />
+        ))}
+
+        <Route path='*' element={<>Not Found</>} />
       </Routes>
     </>
   );
